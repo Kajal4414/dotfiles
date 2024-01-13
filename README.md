@@ -38,3 +38,10 @@ cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/prof
     - https://fonts.google.com/specimen/Inter
     - https://github.com/ryanoasis/nerd-fonts/releases/latest `FiraCode.zip`
     - https://www.jetbrains.com/lp/mono
+
+
+## [Linux Mint Installation Guide](https://linuxmint-installation-guide.readthedocs.io/en/latest/)
+- Kernel: `6.5.0-14-generic` Working fine on `Linux Mint 21.2` (With my hardware).
+- If touchpad is lagging: `apt install xserver-xorg-input-synaptics` https://linuxmint.com/rel_virginia.php.
+
+## [Always install Windows first, before you install Linux Mint.](https://linuxmint-installation-guide.readthedocs.io/en/latest/multiboot.html)
