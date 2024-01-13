@@ -26,6 +26,11 @@ cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/prof
     https://github.com/keeferrourke/capitaine-cursors && cd capitaine-cursors && ./build.sh
     mkdir -p ~/.icons/Capitaine-Cursors
     cp -pr path/to/theme/ ~/.icons/Capitaine-Cursors
+
+    # Patched Capitaine Cursors
+    curl https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
+    unzip Linux.zip
+    mv Capitaine-Cursors/ ~/.icons/
     ```
 - Fonts: (Default installation directory: `$HOME/.local/share/fonts`).
     - https://fonts.google.com/specimen/Roboto+Condensed
