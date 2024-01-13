@@ -35,7 +35,7 @@ git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-the
 
 ### IconTheme: [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme)
 
-Install the 'Blue' color version of the Colloid icon theme (Default directory: `$HOME/.local/share/icons`):
+Install the 'Blue' color version of the Colloid-icon-theme (Default directory: `$HOME/.local/share/icons`):
 
 ```sh
 git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh
@@ -43,7 +43,7 @@ git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-t
 
 ### CursorTheme: [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
 
-Install the Capitaine-Cursors and the Patched version:
+Install the Capitaine-Cursors Patched version:
 
 ```sh
 curl -LO https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
