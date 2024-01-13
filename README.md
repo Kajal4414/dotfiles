@@ -36,7 +36,7 @@ To export your GNOME Terminal profiles:
 dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/gnome-terminal-profiles.dconf
 ```
 
-To import your GNOME Terminal profiles:
+To import your [GNOME Terminal profiles](https://github.com/sakshiagrwal/Dotfiles/blob/main/bash/gnome-terminal-profiles.dconf):
 
 ```sh
 cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/profiles:/
