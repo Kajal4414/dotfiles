@@ -1,3 +1,33 @@
+## Setting Charging Thresholds for Battery Health
+
+To extend the lifespan of your laptop's battery, you can set charging thresholds that prevent the battery from charging to full capacity. Use the provided service file to configure these thresholds.
+
+Installation:
+
+1. Download the `battery-charge-threshold.service` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/main/Linux/etc/systemd/system/battery-charge-threshold.service).
+2. Move the service file to the systemd system directory and start the service:
+
+```sh
+sudo mv battery-charge-threshold.service /etc/systemd/system/
+sudo systemctl start battery-charge-threshold.service && sudo systemctl enable battery-charge-threshold.service
+```
+
+## Customizing Firefox for Enhanced Performance
+
+1. Download Configuration Files:
+
+- Obtain the `autoconfig.js` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/autoconfig.js).
+- Acquire the `firefox.cfg` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/firefox.cfg).
+- Get the `policies.json` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/policies.json).
+
+2. Move the configuration file to the Firefox installation directory:
+
+```sh
+sudo mv firefox.cfg /usr/lib/firefox/firefox.cfg
+sudo mv autoconfig.js /usr/lib/firefox/defaults/pref/autoconfig.js
+sudo mv policies.json /usr/lib/firefox/distribution/policies.json
+```
+
 ## Exporting and Importing GNOME Terminal Profiles
 
 To export your GNOME Terminal profiles:
