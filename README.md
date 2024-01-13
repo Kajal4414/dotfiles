@@ -12,8 +12,21 @@ cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/prof
         - Use this method with caution, as it restores all GNOME settings, not just Terminal-specific ones.
 
 - GtkTheme: [Colloid-Dark](https://github.com/vinceliuice/Colloid-gtk-theme) black color version
+    ```sh
+    git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme
+    ./install.sh --name Colloid-Dark --color dark --tweaks black rimless
+    ```
 - IconTheme: [Colloid](https://github.com/vinceliuice/Colloid-icon-theme) blue color version
+    ```sh
+    git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme
+    ./install.sh
+    ```
 - CursorTheme: [Capitaine-Cursors](https://github.com/keeferrourke/capitaine-cursors). Fork [Patched-Capitaine-Cursors](https://github.com/sainnhe/capitaine-cursors)
+    ```sh
+    https://github.com/keeferrourke/capitaine-cursors && cd capitaine-cursors && ./build.sh
+    mkdir -p ~/.icons/Capitaine-Cursors
+    cp -pr path/to/theme/ ~/.icons/Capitaine-Cursors
+    ```
 - Fonts:
     - https://fonts.google.com/specimen/Roboto+Condensed
     - https://fonts.google.com/specimen/IBM+Plex+Sans
