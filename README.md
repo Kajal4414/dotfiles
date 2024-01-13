@@ -27,7 +27,7 @@ cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/prof
 
 ### GtkTheme: [Colloid-gtk-theme](https://github.com/vinceliuice/Colloid-gtk-theme)
 
-Install the 'Blackness' color version of the Colloid-Dark theme:
+Install the 'Blackness' color version of the Colloid-gtk-theme (Default directory: `$HOME/.themes`):
 
 ```sh
 git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
@@ -35,7 +35,7 @@ git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-the
 
 ### IconTheme: [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme)
 
-Install the 'Blue' color version of the Colloid icon theme:
+Install the 'Blue' color version of the Colloid icon theme (Default directory: `$HOME/.local/share/icons`):
 
 ```sh
 git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh
