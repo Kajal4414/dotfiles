@@ -14,7 +14,7 @@ cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/prof
 - GtkTheme: [Colloid-Dark](https://github.com/vinceliuice/Colloid-gtk-theme) 'Blackness' color version (Default installation directory: `$HOME/.themes`).
     ```sh
     git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme
-    ./install.sh --name Colloid-Dark --color dark --tweaks black rimless
+    ./install.sh --color dark --tweaks black rimless
     ```
 - IconTheme: [Colloid](https://github.com/vinceliuice/Colloid-icon-theme) 'Blue' color version (Default installation directory: `$HOME/.local/share/icons`).
     ```sh
@@ -29,7 +29,7 @@ cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/prof
 
     # Patched Capitaine Cursors
     curl https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
-    unzip Linux.zip
+    unzip Linux.zip # After unzip rename 'Capitaine Cursors' to 'Capitaine-Cursors'
     mv Capitaine-Cursors/ ~/.icons/
     ```
 - Fonts: (Default installation directory: `$HOME/.local/share/fonts`).
