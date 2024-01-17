@@ -21,8 +21,15 @@ Installation:
    sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
    ```
 
-   - [Here's a breakdown of each line in Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
+   - [Here's a breakdown of Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
    - [Here's a breakdown of policies.json file](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
+  
+3. Firefox Mod Blur: [theme](https://github.com/datguypiko/Firefox-Mod-Blur), [stylesheet config](https://github.com/sakshiagrwal/Scripts/blob/258124948b51033265574a73336131482e22fc2e/Linux/usr/lib/firefox/firefox.cfg#L26).
+
+   ```sh
+   git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur && cd Firefox-Mod-Blur
+   cd "$HOME/.mozilla/firefox/7do7mr6f.default-release"
+   ```
 
 ## Exporting and Importing GNOME Terminal Profiles
 
