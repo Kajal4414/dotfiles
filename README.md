@@ -18,8 +18,10 @@ Installation:
 2. Move the configuration file to the Firefox installation directory:
 
    ```sh
-   sudo mv firefox.cfg /usr/lib/firefox/firefox.cfg && sudo mv autoconfig.js /usr/lib/firefox/defaults/pref/autoconfig.js && sudo mv policies.json /usr/lib/firefox/distribution/policies.json
+   sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
    ```
+
+   - [Here's a breakdown of each line in your Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
 
 ## Exporting and Importing GNOME Terminal Profiles
 
