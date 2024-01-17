@@ -21,7 +21,8 @@ Installation:
    sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
    ```
 
-   - [Here's a breakdown of each line in your Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
+   - [Here's a breakdown of each line in Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
+   - [Here's a breakdown of policies.json file](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
 
 ## Exporting and Importing GNOME Terminal Profiles
 
