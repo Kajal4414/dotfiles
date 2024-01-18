@@ -8,7 +8,7 @@ Installation:
 2. Move the service file to the systemd system directory and start the service:
 
    ```sh
-   sudo mv battery-charge-threshold.service /etc/systemd/system/ && sudo systemctl start battery-charge-threshold.service && sudo systemctl enable battery-charge-threshold.service
+   sudo mv battery-threshold.service /etc/systemd/system/ && sudo systemctl start battery-threshold.service && sudo systemctl enable battery-threshold.service
    ```
 
 ## Customizing Firefox for Enhanced Performance
@@ -28,7 +28,7 @@ Installation:
 
    ```sh
    git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur && cd Firefox-Mod-Blur
-   cd "$HOME/.mozilla/firefox/7do7mr6f.default-release"
+   cd ~/.mozilla/firefox/*default-release
    ```
 
 ## Exporting and Importing GNOME Terminal Profiles
