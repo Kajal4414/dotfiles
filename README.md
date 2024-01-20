@@ -27,8 +27,7 @@ Installation:
 3. Firefox Mod Blur: [theme](https://github.com/datguypiko/Firefox-Mod-Blur), [stylesheet config](https://github.com/sakshiagrwal/Scripts/blob/258124948b51033265574a73336131482e22fc2e/Linux/usr/lib/firefox/firefox.cfg#L26).
 
    ```sh
-   cd ~/.mozilla/firefox/*default-release
-   git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && shopt -s dotglob && rm -rf !(ASSETS|userChrome.css|userContent.css)
+   cd ~/.mozilla/firefox/*default-release && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && shopt -s dotglob && rm -rf !(ASSETS|userChrome.css|userContent.css)
    ```
 
 ## Exporting and Importing GNOME Terminal Profiles
@@ -63,7 +62,7 @@ Restore:
 - Install the 'Blackness' color version of the Colloid-gtk-theme (Default directory: `$HOME/.themes`):
 
   ```sh
-  git clone https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
+  git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
   ```
 
 ### IconTheme: [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme)
@@ -71,7 +70,7 @@ Restore:
 - Install the 'Blue' color version of the Colloid-icon-theme (Default directory: `$HOME/.local/share/icons`):
 
   ```sh
-  git clone https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh
+  git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh
   ```
 
 ### CursorTheme: [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
