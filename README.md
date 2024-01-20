@@ -4,11 +4,11 @@ To extend the lifespan of your laptop's battery, you can set charging thresholds
 
 Installation:
 
-1. Download the `battery-charge-threshold.service` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/etc/systemd/system/battery-threshold.service).
+1. Download the `battery-threshold.service` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/etc/systemd/system/battery-threshold.service).
 2. Move the service file to the systemd system directory and start the service:
 
    ```sh
-   sudo mv battery-threshold.service /etc/systemd/system/ && sudo systemctl start battery-threshold.service && sudo systemctl enable battery-threshold.service
+   sudo mv battery-threshold.service /etc/systemd/system/ && systemctl enable battery-threshold.service && systemctl start battery-threshold.service
    ```
 
 ## Customizing Firefox for Enhanced Performance
