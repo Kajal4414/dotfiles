@@ -62,7 +62,7 @@ Restore:
 - Install the 'Blackness' color version of the Colloid-gtk-theme (Default directory: `$HOME/.themes`):
 
   ```sh
-  git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
+  git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
   ```
 
 ### IconTheme: [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme)
@@ -70,7 +70,7 @@ Restore:
 - Install the 'Blue' color version of the Colloid-icon-theme (Default directory: `$HOME/.local/share/icons`):
 
   ```sh
-  git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh
+  git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
   ```
 
 ### CursorTheme: [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
