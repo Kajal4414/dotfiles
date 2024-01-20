@@ -28,7 +28,7 @@ Installation:
 
    ```sh
    cd ~/.mozilla/firefox/*default-release
-   git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && rm -r !(image|userChrome.css|userContent.css)
+   git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && shopt -s dotglob && rm -rf !(ASSETS|userChrome.css|userContent.css)
    ```
 
 ## Exporting and Importing GNOME Terminal Profiles
