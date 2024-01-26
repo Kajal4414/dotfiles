@@ -84,17 +84,18 @@ Restore:
 ### SystemFonts:
 
 - [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
-- [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans)
+- [IBM Plex Sans Regular 10](https://fonts.google.com/specimen/IBM+Plex+Sans) `Default font`, `Desktop font` and `Document font`
+   - [IBM Plex Sans Medium 10]() `Window title font`
 - [Inter](https://fonts.google.com/specimen/Inter)
-- [Fira Code (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts/releases/latest) - Download `FiraCode.zip`
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono)
+- [Fira Code (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts/releases/latest) - Download 'FiraCode.zip'
+- [JetBrains Mono Regular 10](https://www.jetbrains.com/lp/mono) `Monospace font`
 
 Recommended directory: `$HOME/.local/share/fonts`
 
 ## Linux Mint Installation and Configuration
 
-- Kernel version `6.5.0-14-generic` is confirmed to work well with `Linux Mint 21.2` and the specified hardware.
-- If experiencing touchpad lag, install the Synaptics driver:
+- Kernel version `6.2.0-39-generic` is confirmed to work well with `Linux Mint 21.3` and the specified hardware.
+- If experiencing touchpad lag, install the Synaptics driver: **(Kernel version `6.2.0-39-generic` fixes this issue)**
 
   ```sh
   apt install xserver-xorg-input-synaptics
@@ -116,7 +117,7 @@ Adjust the screen contrast using the `xgamma` and `xrandr` commands. For more de
 - Using `xgamma`:
 
   ```sh
-  xgamma -gamma 1.05
+  xgamma -gamma 0.85
   ```
 
   This command sets the gamma value to `1.05`, affecting overall screen contrast and brightness.
