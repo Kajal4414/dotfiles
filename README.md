@@ -13,9 +13,12 @@ Installation:
 
 ## Customizing Firefox for Enhanced Performance
 
-1. Download Configuration Files: [autoconfig.js](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/autoconfig.js), [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/firefox.cfg), [policies.json](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/policies.json).
+1. Download Configuration Files:
+   - [autoconfig.js](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/autoconfig.js)
+   - [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/firefox.cfg)
+   - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json)
 
-2. Move the configuration file to the Firefox installation directory:
+3. Move the configuration file to the Firefox installation directory:
 
    ```sh
    sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
@@ -24,7 +27,7 @@ Installation:
    - [Here's a breakdown of Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
    - [Here's a breakdown of policies.json file](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
   
-3. Firefox Mod Blur: [theme](https://github.com/datguypiko/Firefox-Mod-Blur), [stylesheet config](https://github.com/sakshiagrwal/Scripts/blob/258124948b51033265574a73336131482e22fc2e/Linux/usr/lib/firefox/firefox.cfg#L26).
+4. Firefox Mod Blur: [theme](https://github.com/datguypiko/Firefox-Mod-Blur), [stylesheet config](https://github.com/sakshiagrwal/Scripts/blob/258124948b51033265574a73336131482e22fc2e/Linux/usr/lib/firefox/firefox.cfg#L26).
 
    ```sh
    cd ~/.mozilla/firefox/*default-release && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && shopt -s dotglob && rm -rf !(ASSETS|userChrome.css|userContent.css)
