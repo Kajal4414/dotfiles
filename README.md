@@ -18,6 +18,10 @@ Installation:
    - [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/firefox.cfg)
    - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json)
 
+   ```sh
+   wget -q https://github.com/sakshiagrwal/Scripts/raw/dev/Linux/usr/lib/firefox/distribution/policies.json
+   ```
+
 2. Move the configuration file to the Firefox installation directory:
 
    ```sh
