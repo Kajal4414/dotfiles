@@ -19,7 +19,7 @@ Installation:
    - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json)
 
    ```sh
-   wget -q https://github.com/sakshiagrwal/Scripts/raw/dev/Linux/usr/lib/firefox/distribution/policies.json
+   wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js && wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg && wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
    ```
 
 2. Move the configuration file to the Firefox installation directory:
