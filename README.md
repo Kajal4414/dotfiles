@@ -90,7 +90,7 @@ Restore:
 - Install the Capitaine-Cursors Patched version:
 
   ```sh
-  curl -LO https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
+  wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
   ```
 
 ### SystemFonts:
