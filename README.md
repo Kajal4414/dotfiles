@@ -4,7 +4,7 @@ To extend the lifespan of your laptop's battery, you can set charging thresholds
 
 Installation:
 
-1. Download the `battery-threshold.service` file from the [Scripts repository](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/etc/systemd/system/battery-threshold.service).
+1. Download the `battery-threshold.service` file from the [scripts](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/etc/systemd/system/battery-threshold.service) repository.
 
    ```sh
    wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service
@@ -33,7 +33,7 @@ Installation:
    sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
    ```
   
-3. [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
+3. Apply the [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
 
    ```sh
    cd ~/.mozilla/firefox/*default-release && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && shopt -s dotglob && rm -rf !(ASSETS|userChrome.css|userContent.css)
@@ -84,27 +84,26 @@ Restore:
 
 ### CursorTheme: [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
 
-- Install the Capitaine-Cursors [Patched version](https://github.com/sainnhe/capitaine-cursors):
+- Install the Capitaine-cursors [patched version](https://github.com/sainnhe/capitaine-cursors):
 
   ```sh
   wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
   ```
 
 ### SystemFonts:
+Recommended directory: `$HOME/.local/share/fonts`
 
-- [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
 - [IBM Plex Sans Regular 10](https://fonts.google.com/specimen/IBM+Plex+Sans) `Default font`, `Desktop font` and `Document font`
    - [IBM Plex Sans Medium 10]() `Window title font`
-- [Inter](https://fonts.google.com/specimen/Inter)
-- [Fira Code (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts/releases/latest) - Download 'FiraCode.zip'
 - [JetBrains Mono Regular 10](https://www.jetbrains.com/lp/mono) `Monospace font`
-
-Recommended directory: `$HOME/.local/share/fonts`
+- [Fira Code (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts/releases/latest)
+- [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
+- [Inter](https://fonts.google.com/specimen/Inter)
 
 ## Linux Mint Installation and Configuration
 
 - Kernel version `6.2.0-39-generic` is confirmed to work well with `Linux Mint 21.3` and the specified hardware.
-- If experiencing touchpad lag, install the Synaptics driver: **(Kernel version `6.2.0-39-generic` fixes this issue)**
+- If experiencing touchpad lag, install the Synaptics driver: **(Kernel version `6.2.0-39-generic` resolves this issue)**
 
   ```sh
   apt install xserver-xorg-input-synaptics
