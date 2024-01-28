@@ -20,8 +20,8 @@ Installation:
 
 1. Download Configuration Files:
    - [autoconfig.js](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/autoconfig.js)
-   - [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/firefox.cfg)
-   - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json)
+   - [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/firefox.cfg) | [breakdown of each line](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
+   - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json) | [breakdown of each line](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
 
    ```sh
    wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js && wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg && wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
@@ -32,9 +32,6 @@ Installation:
    ```sh
    sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
    ```
-
-   - [Here's a breakdown of Firefox.cfg file](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
-   - [Here's a breakdown of policies.json file](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
   
 3. [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
 
@@ -87,7 +84,7 @@ Restore:
 
 ### CursorTheme: [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
 
-- Install the Capitaine-Cursors Patched version:
+- Install the Capitaine-Cursors [Patched version](https://github.com/sainnhe/capitaine-cursors):
 
   ```sh
   wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
