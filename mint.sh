@@ -22,6 +22,10 @@ cd ~/.mozilla/firefox/*.default-release
 git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome
 cd chrome && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
 
+# Set wallpaper
+wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent.com/JaKooLit/Wallpaper-Bank/main/wallpapers/Anime-Girl-2.png
+gsettings set org.cinnamon.desktop.background picture-uri 'file:///Downloads/wallpaper.png' # Wallpaper
+
 # Set Colloid-gtk-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme
 cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
