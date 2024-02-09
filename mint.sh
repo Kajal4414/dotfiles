@@ -18,7 +18,7 @@ sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubu
 sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
 
 # Set Firefox-Mod-Blur theme
-cd ~/.mozilla/firefox/*.default-release/
+cd ~/.mozilla/firefox/*.default-release
 git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome
 cd chrome && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
 
@@ -36,7 +36,9 @@ gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark'
 
 # Set Capitaine-cursors-theme
 wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
-unzip -q Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
+unzip -q Linux.zip -d Capitaine-Cursors
+cd Capitaine-Cursors && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
+cd .. && rm -rf Capitaine-Cursors
 gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors'
 
 # Set fonts
