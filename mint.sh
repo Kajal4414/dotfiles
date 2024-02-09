@@ -26,20 +26,20 @@ cd chrome && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userConte
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme
 cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
 cd .. && rm -rf Colloid-gtk-theme
-# gsettings set org.cinnamon.desktop.interface gtk-theme 'Colloid-Dark'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'Colloid-Dark' # Applications
 
 # Set Colloid-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme
 cd Colloid-icon-theme && ./install.sh
 cd .. && rm -rf Colloid-icon-theme
-# gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark'
+gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark' # Icons
 
 # Set Capitaine-cursors-theme
 wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
 unzip -q Linux.zip -d Capitaine-Cursors
 cd Capitaine-Cursors && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
 cd .. && rm -rf Capitaine-Cursors Linux.zip
-# gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors'
+gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors' # Mouse Pointer
 
 # Set fonts
 # gsettings set org.cinnamon.desktop.interface font-name 'IBM Plex Sans Regular 10'
