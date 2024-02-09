@@ -47,5 +47,6 @@ gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors' # 
 
 # Set fonts
 # gsettings set org.cinnamon.desktop.interface font-name 'IBM Plex Sans Regular 10'
+# gsettings set org.cinnamon.desktop.wm.preferences titlebar-font 'IBM Plex Sans Medium 10'
 # gsettings set org.cinnamon.desktop.interface document-font-name 'IBM Plex Sans Regular 10'
 # gsettings set org.cinnamon.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
