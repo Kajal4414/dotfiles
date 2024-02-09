@@ -7,6 +7,14 @@ sudo apt upgrade -y
 # Install required packages
 sudo apt install -y git-all
 
+cd Downloads
+wget -q --show-progress -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+wget -q --show-progress -O bleachbit.deb "https://download.bleachbit.org/bleachbit_4.6.0-0_all_ubuntu2310.deb"
+wget -q --show-progress -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+wget -q --show-progress -O telegram.tar.xz "https://td.telegram.org/tlinux/tsetup.4.14.14.tar.xz" && sudo tar -xf telegram*.tar.xz -C /opt/
+wget -q --show-progress -O app.deb "https://"
+cd ..
+
 # Set battery charging threshold
 sudo wget -q -O /etc/systemd/system/battery-threshold.service https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service
 sudo systemctl enable --now battery-threshold.service
@@ -18,9 +26,9 @@ sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubu
 sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
 
 # Set Firefox-Mod-Blur theme
-cd ~/.mozilla/firefox/*.default-release
+cd ~/.mozilla/firefox/*.default-release/
 git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome
-cd chrome && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
+cd chrome/ && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
 
 # Set wallpaper
 wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent.com/JaKooLit/Wallpaper-Bank/main/wallpapers/Anime-Girl-2.png
@@ -28,20 +36,20 @@ wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent
 
 # Set Colloid-gtk-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme
-cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless
+cd Colloid-gtk-theme/ && ./install.sh --color dark --tweaks black rimless
 cd .. && rm -rf Colloid-gtk-theme
 # gsettings set org.cinnamon.desktop.interface gtk-theme 'Colloid-Dark' # Applications
 
 # Set Colloid-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme
-cd Colloid-icon-theme && ./install.sh
+cd Colloid-icon-theme/ && ./install.sh
 cd .. && rm -rf Colloid-icon-theme
 # gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark' # Icons
 
 # Set Capitaine-cursors-theme
 wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
 unzip -q Linux.zip -d Capitaine-Cursors
-cd Capitaine-Cursors && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
+cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
 cd .. && rm -rf Capitaine-Cursors Linux.zip
 # gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors' # Mouse Pointer
 
