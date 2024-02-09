@@ -36,7 +36,7 @@ gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark'
 
 # Set Capitaine-cursors-theme
 wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
-unzip -q Linux.zip -d ~/.icons/Capitaine-Cursors
+unzip -q Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
 gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors'
 
 # Set fonts
