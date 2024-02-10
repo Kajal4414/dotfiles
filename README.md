@@ -87,7 +87,7 @@ Restore:
 - Install the Capitaine-cursors [patched version](https://github.com/sainnhe/capitaine-cursors):
 
   ```sh
-  wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip Linux.zip && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
+  wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
   ```
 
 ### SystemFonts:
