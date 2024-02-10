@@ -7,13 +7,7 @@ Installation:
 1. Download the `battery-threshold.service` file from the [scripts](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/etc/systemd/system/battery-threshold.service) repository.
 
    ```sh
-   wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service
-   ```
-
-2. Move the service file to the systemd system directory and start the service:
-
-   ```sh
-   sudo mv battery-threshold.service /etc/systemd/system/ && systemctl enable battery-threshold.service && systemctl start battery-threshold.service
+   sudo wget -q -O /etc/systemd/system/battery-threshold.service https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service && sudo systemctl enable --now battery-threshold.service
    ```
 
 ## Customizing Firefox
