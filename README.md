@@ -24,16 +24,10 @@ Installation:
    - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json) | [breakdown of each line](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
 
    ```sh
-   wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js && wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg && wget -q https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
-   ```
-
-2. Move the configuration file to the Firefox installation directory:
-
-   ```sh
-   sudo mv firefox.cfg /usr/lib/firefox/ && mv autoconfig.js /usr/lib/firefox/defaults/pref/ && mv policies.json /usr/lib/firefox/distribution/
+   sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js && sudo wget -q -O /usr/lib/firefox/firefox.cfg https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg && sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
    ```
   
-3. Apply the [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
+2. Apply the [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
 
    ```sh
    cd ~/.mozilla/firefox/*.default-release/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
