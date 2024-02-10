@@ -36,7 +36,7 @@ Installation:
 3. Apply the [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
 
    ```sh
-   cd ~/.mozilla/firefox/*default-release && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome && shopt -s dotglob && rm -rf !(ASSETS|userChrome.css|userContent.css)
+   cd ~/.mozilla/firefox/*.default-release/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
    ```
 
 ## Exporting and Importing GNOME Terminal Profiles
