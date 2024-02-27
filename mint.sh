@@ -10,6 +10,7 @@ cd Downloads
 wget -q --show-progress -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" && sudo dpkg --install chrome.deb && rm -rf chrome.deb
 wget -q --show-progress -O bleachbit.deb "https://download.bleachbit.org/bleachbit_4.6.0-0_all_ubuntu2310.deb" && sudo dpkg --install bleachbit.deb && rm -rf bleachbit.deb
 wget -q --show-progress -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" && sudo dpkg --install code.deb && rm -rf code.deb
+sudo wget -q -O ~/.config/Code/User/settings.json "https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/settings.json"
 wget -q --show-progress -O telegram.tar.xz "https://telegram.org/dl/desktop/linux" && sudo tar -xf telegram.tar.xz -C /opt/ && rm -rf telegram.tar.xz
 wget -q --show-progress -O protonvpn.deb "https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb" && sudo dpkg --install protonvpn.deb && rm -rf protonvpn.deb && sudo apt update && sudo apt install protonvpn-cli
 cd ..
