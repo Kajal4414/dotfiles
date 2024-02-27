@@ -131,14 +131,10 @@ Adjust the screen contrast using the `xgamma` and `xrandr` commands. For more de
 ---
 # Screenshots
 
-![Screenshot1](/images/Screenshot1.jpg)
-![Screenshot2](/images/Screenshot2.jpg)
-![Screenshot3](/images/Screenshot3.jpg)
-![Screenshot4](/images/Screenshot4.jpg)
-![Screenshot5](/images/Screenshot5.jpg)
-![Screenshot6](/images/Screenshot6.jpg)
-![Screenshot7](/images/Screenshot7.jpg)
-![Screenshot8](/images/Screenshot8.jpg)
+![Screenshot1](/Screenshot1.png)
+![Screenshot2](/Screenshot2.png)
+![Screenshot3](/Screenshot3.png)
+![Screenshot4](/Screenshot4.png)
 
 ---
 
