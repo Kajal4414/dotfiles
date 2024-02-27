@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # System update
-sudo apt update
-sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 # Install required packages
 sudo apt install -y git-all
@@ -20,7 +19,7 @@ sudo wget -q -O /etc/systemd/system/battery-threshold.service https://raw.github
 sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
-rm -rf /usr/lib/firefox/distribution/policies.json
+sudo rm -rf /usr/lib/firefox/distribution/policies.json
 sudo wget -q -O /usr/lib/firefox/firefox.cfg https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg
 sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js
 sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
@@ -28,7 +27,7 @@ sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubus
 # Set Firefox-Mod-Blur theme
 cd ~/.mozilla/firefox/*.default-release/
 git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome
-cd chrome/ && find . ! -name 'ASSETS' ! -name 'userChrome.css' ! -name 'userContent.css' -delete
+cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*
 
 # Set wallpaper
 wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent.com/JaKooLit/Wallpaper-Bank/main/wallpapers/Anime-Girl-2.png
