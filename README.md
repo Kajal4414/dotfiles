@@ -129,5 +129,17 @@ Adjust the screen contrast using the `xgamma` and `xrandr` commands. For more de
 **Please be aware that these changes are temporary and will be reset after a system reboot.**
 
 ---
+# Screenshots
+
+![Screenshot1](/images/Screenshot1.jpg)
+![Screenshot2](/images/Screenshot2.jpg)
+![Screenshot3](/images/Screenshot3.jpg)
+![Screenshot4](/images/Screenshot4.jpg)
+![Screenshot5](/images/Screenshot5.jpg)
+![Screenshot6](/images/Screenshot6.jpg)
+![Screenshot7](/images/Screenshot7.jpg)
+![Screenshot8](/images/Screenshot8.jpg)
+
+---
 
 This guide provides a streamlined approach to customizing and backing up your GNOME Terminal and system settings, as well as tips for installing Linux Mint and setting up a dual-boot with Windows.
