@@ -108,7 +108,7 @@ When setting up a dual-boot system:
 
 ## Adjusting Screen Contrast with `xgamma` and `xrandr`
 
-Adjust the screen contrast using the `xgamma` and `xrandr` commands. For more detailed information, you can refer to [this Ask Ubuntu thread](https://askubuntu.com/questions/91195/how-do-i-adjust-the-screen-contrast).
+Adjust the screen contrast using the `xgamma` and `xrandr` commands. For more detailed information, you can refer to this [ask Ubuntu](https://askubuntu.com/questions/91195/how-do-i-adjust-the-screen-contrast) thread.
 
 - Using `xgamma`:
 
