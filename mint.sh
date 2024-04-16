@@ -5,6 +5,10 @@ sudo apt update && sudo apt upgrade -y
 
 # Install required packages
 sudo apt install -y git-all
+git config --global user.name "Sakshi Aggarwal"
+git config --global user.email "81718060+sakshiagrwal@users.noreply.github.com"
+git config --global core.autocrlf false
+git config --global core.editor "xed --wait"
 
 cd Downloads
 wget -q --show-progress -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" && sudo dpkg --install chrome.deb && rm -rf chrome.deb
