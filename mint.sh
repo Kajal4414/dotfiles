@@ -25,39 +25,33 @@ sudo wget -q -O /etc/systemd/system/battery-threshold.service https://raw.github
 sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
-sudo rm -rf /usr/lib/firefox/firefox.cfg
-sudo rm -rf /usr/lib/firefox/defaults/pref/autoconfig.js
-sudo rm -rf /usr/lib/firefox/distribution/policies.json
+sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
 sudo wget -q -O /usr/lib/firefox/firefox.cfg https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg
 sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js
 sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
 
 # Set Firefox-Mod-Blur theme
-cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/
-git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome
-cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*
+cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*
 
 # Set wallpaper
 wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent.com/JaKooLit/Wallpaper-Bank/main/wallpapers/Anime-Girl-2.png
 # gsettings set org.cinnamon.desktop.background picture-uri 'file:///Downloads/wallpaper.png' # Wallpaper
 
 # Set Colloid-gtk-theme
+sudo rm -rf .themes/Colloid-Dark/ .themes/Colloid-Dark-hdpi/ .themes/Colloid-Dark-xhdpi/
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme
-cd Colloid-gtk-theme/ && ./install.sh --color dark --tweaks black rimless
-cd .. && rm -rf Colloid-gtk-theme
+cd Colloid-gtk-theme/ && ./install.sh --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
 # gsettings set org.cinnamon.desktop.interface gtk-theme 'Colloid-Dark' # Applications
 
 # Set Colloid-icon-theme
+sudo rm -rf .local/share/icons/Colloid/ .local/share/icons/Colloid-dark/ .local/share/icons/Colloid-light/
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme
-cd Colloid-icon-theme/ && ./install.sh
-cd .. && rm -rf Colloid-icon-theme
+cd Colloid-icon-theme/ && ./install.sh && cd .. && rm -rf Colloid-icon-theme
 # gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark' # Icons
 
 # Set Capitaine-cursors-theme
 wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
-unzip -q Linux.zip -d Capitaine-Cursors
-cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors
-cd .. && rm -rf Capitaine-Cursors Linux.zip
+unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
 # gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors' # Mouse Pointer
 
 # Set fonts
