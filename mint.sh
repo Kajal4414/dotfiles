@@ -17,7 +17,7 @@ git config --global core.editor "xed --wait"
 # sudo wget -q -O ~/.config/Code/User/settings.json "https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/settings.json"
 # code --install-extension codeium.codeium dbaeumer.vscode-eslint eamodio.gitlens esbenp.prettier-vscode github.github-vscode-theme ms-python.black-formatter ms-python.debugpy ms-python.pylint ms-python.python ms-python.vscode-pylance ms-vscode-remote.remote-ssh ms-vscode-remote.remote-ssh-edit ms-vscode.makefile-tools ms-vscode.remote-explorer pkief.material-icon-theme redhat.java redhat.vscode-xml redhat.vscode-yaml tabnine.tabnine-vscode visualstudioexptteam.intellicode-api-usage-examples visualstudioexptteam.vscodeintellicode vscjava.vscode-java-debug vscjava.vscode-java-dependency vscjava.vscode-java-pack vscjava.vscode-java-test vscjava.vscode-maven
 # wget -q --show-progress -O telegram.tar.xz "https://telegram.org/dl/desktop/linux" && sudo tar -xf telegram.tar.xz -C /opt/ && rm -rf telegram.tar.xz
-# wget -q --show-progress -O protonvpn.deb "https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb" && sudo dpkg --install protonvpn.deb && rm -rf protonvpn.deb && sudo apt update && sudo apt install protonvpn-cli
+# wget -q --show-progress -O protonvpn.deb "https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb" && sudo dpkg -i protonvpn.deb && rm protonvpn.deb && sudo apt update && sudo apt install -y proton-vpn-gnome-desktop
 # cd ..
 
 # Set battery charging threshold
