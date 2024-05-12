@@ -43,10 +43,10 @@ git clone --depth 1 https://github.com/vinceliuice/Orchis-theme
 cd Orchis-theme/ && ./install.sh --color dark --size standard --libadwaita --tweaks black && cd .. && rm -rf cd Orchis-theme
 # gsettings set org.cinnamon.desktop.interface gtk-theme 'Orchis-Dark' # Applications
 
-# Set Colloid-icon-theme
-sudo rm -rf .local/share/icons/Colloid/ .local/share/icons/Colloid-dark/ .local/share/icons/Colloid-light/
-git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme
-cd Colloid-icon-theme/ && ./install.sh && cd .. && rm -rf Colloid-icon-theme
+# Set Tela-circle-icon-theme
+sudo rm -rf .local/share/icons/Tela-Circle/ .local/share/icons/Tela-Circle-dark/ .local/share/icons/Tela-Circle-light/
+git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme
+cd Tela-circle-icon-theme/ && ./install.sh -n Tela-Circle && cd .. && rm -rf Tela-circle-icon-theme
 # gsettings set org.cinnamon.desktop.interface icon-theme 'Colloid-dark' # Icons
 
 # Set Capitaine-cursors-theme
