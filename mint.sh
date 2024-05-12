@@ -37,11 +37,11 @@ cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 
 wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent.com/JaKooLit/Wallpaper-Bank/main/wallpapers/anime-girl-abyss.png
 # gsettings set org.cinnamon.desktop.background picture-uri 'file:///Downloads/wallpaper.png' # Wallpaper
 
-# Set Colloid-gtk-theme
-sudo rm -rf .themes/Colloid-Dark/ .themes/Colloid-Dark-hdpi/ .themes/Colloid-Dark-xhdpi/
-git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme
-cd Colloid-gtk-theme/ && ./install.sh --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
-# gsettings set org.cinnamon.desktop.interface gtk-theme 'Colloid-Dark' # Applications
+# Set Orchis-theme
+sudo rm -rf .themes/Orchis-Dark/
+git clone --depth 1 https://github.com/vinceliuice/Orchis-theme
+cd Orchis-theme/ && ./install.sh --color dark --size standard --libadwaita --tweaks black && cd .. && rm -rf cd Orchis-theme
+# gsettings set org.cinnamon.desktop.interface gtk-theme 'Orchis-Dark' # Applications
 
 # Set Colloid-icon-theme
 sudo rm -rf .local/share/icons/Colloid/ .local/share/icons/Colloid-dark/ .local/share/icons/Colloid-light/
