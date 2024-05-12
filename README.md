@@ -59,7 +59,7 @@ Restore:
 - Install the 'Blackness' color version of the Colloid-gtk-theme (Default directory: `$HOME/.themes`):
 
   ```sh
-  git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
+  git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --libadwaita --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
   ```
 
 ### IconTheme: [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme)
