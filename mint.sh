@@ -21,7 +21,7 @@ git config --global core.editor "xed --wait"
 # cd ..
 
 # Set battery charging threshold
-sudo wget -q -O /etc/systemd/system/battery-threshold.service https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service
+sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
 sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
