@@ -47,13 +47,11 @@ sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-ci
 # sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Tela-Circle\/scalable\/apps\/idea.svg/' /usr/share/applications/jetbrains-idea-ce.desktop
 
 # Install JetBrainsMono font (https://www.jetbrains.com/lp/mono/)
-curl -O https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip && unzip -q JetBrainsMono-2.304.zip -d JetBrainsMono && cd JetBrainsMono/fonts/variable/
-sudo mv *.ttf /usr/share/fonts/ && cd ../../.. && rm -rf JetBrainsMono*
+(cd JetBrainsMono/fonts/variable/ && sudo mv *.ttf /usr/share/fonts/)
 
-# Install IBMPlexSans Regular/Medium font (https://fonts.google.com/specimen/IBM+Plex+Sans)
-sudo mv /usr/share/fonts/IBMPlexSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Regular.ttf
-sudo mv /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Medium.ttf
-# Unpack fonts to ~/.local/share/fonts (or /usr/share/fonts, to install fonts system-wide) and fc-cache -f -v
+# Install IBMPlexSans font (https://fonts.google.com/specimen/IBM+Plex+Sans)
+(cd IBMPlexSans/ && sudo mv *.ttf /usr/share/fonts/)
+fc-cache -f -v
 
 # Set Capitaine-cursors-theme (https://github.com/sainnhe/capitaine-cursors)
 curl -OLS https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/
