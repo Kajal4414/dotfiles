@@ -1,99 +1,79 @@
-## Setting Charging Thresholds for Battery Health
+# Linux Mint Dotfiles
 
-To extend the lifespan of your laptop's battery, you can set charging thresholds that prevent the battery from charging to full capacity. Use the provided service file to configure these thresholds.
+```sh
+git clone --depth 1 https://github.com/sakshiagrwal/dotfiles.git && cd dotfiles && chmod +x setup.sh && ./setup.sh
+```
 
-Installation:
+## 1. System update
 
-1. Download the `battery-threshold.service` file from the [scripts](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/etc/systemd/system/battery-threshold.service) repository.
+## 2. Git setup
+
+## 3. Set battery charging threshold
+
+-   Download the `battery-threshold.service` file and enable the service.
 
     ```sh
     sudo wget -q -O /etc/systemd/system/battery-threshold.service https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service && sudo systemctl enable --now battery-threshold.service
     ```
 
-## Customizing Firefox
+    This extends your laptop battery lifespan by setting charging thresholds using the provided service file.
 
-1. Download Configuration Files:
+## 4. Configure Firefox
 
-    - [autoconfig.js](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/autoconfig.js)
-    - [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/firefox.cfg) | [breakdown of each line](https://github.com/sakshiagrwal/Scripts/commit/29d90e6f4b727b24824584da56e5965cb43d94ea)
-    - [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json) | [breakdown of each line](https://github.com/sakshiagrwal/Scripts/commit/258124948b51033265574a73336131482e22fc2e)
+-   Configuration files: [autoconfig.js](https://github.com/sakshiagrwal/Scripts/blob/main/Windows/Extra/autoconfig.js), [firefox.cfg](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/firefox.cfg), [policies.json](https://github.com/sakshiagrwal/Scripts/blob/dev/Linux/usr/lib/firefox/distribution/policies.json)
 
     ```sh
     sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js && sudo wget -q -O /usr/lib/firefox/firefox.cfg https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg && sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
     ```
 
-2. Apply the [Firefox Mod Blur Theme](https://github.com/datguypiko/Firefox-Mod-Blur)
+-   Apply theme: [Firefox-Mod-Blur](https://github.com/datguypiko/Firefox-Mod-Blur)
 
     ```sh
     cd ~/.mozilla/firefox/*.default-release/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*
     ```
 
-## Exporting and Importing GNOME Terminal Profiles
+## 5. Colloid themes
 
--   To export your GNOME Terminal profiles:
-
-    ```sh
-    dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/gnome-terminal-profiles.dconf
-    ```
-
--   To import your [GNOME Terminal profiles](https://github.com/sakshiagrwal/Dotfiles/blob/main/bash/gnome-terminal-profiles.dconf):
+-   [Colloid-gtk-theme](https://github.com/vinceliuice/Colloid-gtk-theme) `$HOME/.themes`
 
     ```sh
-    cat ~/gnome-terminal-profiles.dconf | dconf load /org/gnome/terminal/legacy/profiles:/
+    git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh -c dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
     ```
 
-## Backing Up the Entire dconf Database
-
-Back up:
-
--   Save the `~/.config/dconf/user` file to a secure location.
-
-Restore:
-
--   Replace the `~/.config/dconf/user` file with the backup version.
--   Exercise caution with this method as it affects all GNOME settings.
-
-## Theme Customization
-
-### GtkTheme: [Colloid-gtk-theme](https://github.com/vinceliuice/Colloid-gtk-theme)
-
--   Install the 'Blackness' color version of the Colloid-gtk-theme (Default directory: `$HOME/.themes`):
-
-    ```sh
-    git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme && ./install.sh --color dark --libadwaita --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme
-    ```
-
-### IconTheme: [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme)
-
--   Install the 'Blue' color version of the Colloid-icon-theme (Default directory: `$HOME/.local/share/icons`):
+-   [Colloid-icon-theme](https://github.com/vinceliuice/Colloid-icon-theme) `$HOME/.local/share/icons`
 
     ```sh
     git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme && ./install.sh && cd .. && rm -rf Colloid-icon-theme
     ```
 
-### CursorTheme: [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
+## 6. [Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
 
--   Install the Capitaine-cursors [patched version](https://github.com/sainnhe/capitaine-cursors):
+-   Installe capitaine-cursors [patched version](https://github.com/sainnhe/capitaine-cursors) `$HOME/.icons`
 
     ```sh
     wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
     ```
 
-### SystemFonts:
+## 7. Installing fonts
 
-Recommended directory: `$HOME/.local/share/fonts`
+Install the following fonts `$HOME/.local/share/fonts`
 
--   [IBM Plex Sans Regular 10](https://fonts.google.com/specimen/IBM+Plex+Sans) `Default font`, `Desktop font` and `Document font`
-    -   [IBM Plex Sans Medium 10]() `Window title font`
--   [JetBrains Mono Regular 10](https://www.jetbrains.com/lp/mono) `Monospace font`
+-   `Default Font`, `Desktop Font`, `Document Font`: [IBM Plex Sans Regular 10](https://fonts.google.com/specimen/IBM+Plex+Sans)
+-   `Window Title Font`: [IBM Plex Sans Medium 10](https://fonts.google.com/specimen/IBM+Plex+Sans)
+-   `Monospace Font`: [JetBrains Mono Regular 10](https://www.jetbrains.com/lp/mono)
+
+Optional Fonts:
+
 -   [Fira Code (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts/releases/latest)
 -   [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed)
 -   [Inter](https://fonts.google.com/specimen/Inter)
 
+---
+
 ## Linux Mint Installation and Configuration
 
 -   Kernel version `6.2.0-39-generic` is confirmed to work well with `Linux Mint 21.3` and the specified hardware.
--   If experiencing touchpad lag, install the Synaptics driver: **(Kernel version `6.2.0-39-generic` resolves this issue)**
+-   If experiencing touchpad lag, install the Synaptics driver **(Note: Kernel version `6.2.0-39-generic` resolves this issue)**.
 
     ```sh
     apt install xserver-xorg-input-synaptics
