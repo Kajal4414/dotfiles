@@ -14,7 +14,7 @@ git config --global core.editor "xed --wait"
 git clone --depth 1 https://github.com/sakshiagrwal/Dotfiles.git && cd Dotfiles
 
 # Set battery charging threshold to 60%
-sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
+sudo mv battery-threshold.service /etc/systemd/system/
 sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
@@ -28,16 +28,16 @@ sudo mv firefox.cfg /usr/lib/firefox/ autoconfig.js /usr/lib/firefox/defaults/pr
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
 sudo ./install.sh --dest /usr/share/themes/ --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme/
 
+# Install Orchis-theme
+git clone --depth 1 https://github.com/vinceliuice/Orchis-theme && cd Orchis-theme/ && ./install.sh -u && sudo rm -rf /usr/share/themes/Orchis*
+sudo ./install.sh --dest /usr/share/themes/ --color dark --size standard --tweaks black macos && cd .. && rm -rf Orchis-theme/
+
 # Install Colloid-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && sudo rm -rf /usr/share/icons/Colloid*
 sudo ./install.sh --dest /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
 # sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/protonvpn-gui.svg/' /usr/share/applications/protonvpn-app.desktop
 # sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/pycharm.svg/' /usr/share/applications/jetbrains-pycharm-ce.desktop
 # sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/idea.svg/' /usr/share/applications/jetbrains-idea-ce.desktop
-
-# Install Orchis-theme
-git clone --depth 1 https://github.com/vinceliuice/Orchis-theme && cd Orchis-theme/ && ./install.sh -u && sudo rm -rf /usr/share/themes/Orchis*
-sudo ./install.sh --dest /usr/share/themes/ --color dark --size standard --tweaks black macos && cd .. && rm -rf Orchis-theme/
 
 # Install Tela-circle-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme && cd Tela-circle-icon-theme/ && sudo rm -rf /usr/share/icons/Tela*
