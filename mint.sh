@@ -10,16 +10,6 @@ git config --global user.name "Sakshi Aggarwal"
 git config --global user.email "81718060+sakshiagrwal@users.noreply.github.com"
 git config --global core.editor "xed --wait"
 
-# cd Downloads
-# wget -q --show-progress -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" && sudo dpkg --install chrome.deb && rm -rf chrome.deb
-# wget -q --show-progress -O bleachbit.deb "https://download.bleachbit.org/bleachbit_4.6.0-0_all_ubuntu2310.deb" && sudo dpkg --install bleachbit.deb && rm -rf bleachbit.deb
-# wget -q --show-progress -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" && sudo dpkg --install code.deb && rm -rf code.deb
-# sudo wget -q -O ~/.config/Code/User/settings.json "https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/settings.json"
-# code --install-extension codeium.codeium dbaeumer.vscode-eslint eamodio.gitlens esbenp.prettier-vscode github.github-vscode-theme ms-python.black-formatter ms-python.debugpy ms-python.pylint ms-python.python ms-python.vscode-pylance ms-vscode-remote.remote-ssh ms-vscode-remote.remote-ssh-edit ms-vscode.makefile-tools ms-vscode.remote-explorer pkief.material-icon-theme redhat.java redhat.vscode-xml redhat.vscode-yaml tabnine.tabnine-vscode visualstudioexptteam.intellicode-api-usage-examples visualstudioexptteam.vscodeintellicode vscjava.vscode-java-debug vscjava.vscode-java-dependency vscjava.vscode-java-pack vscjava.vscode-java-test vscjava.vscode-maven
-# wget -q --show-progress -O telegram.tar.xz "https://telegram.org/dl/desktop/linux" && sudo tar -xf telegram.tar.xz -C /opt/ && rm -rf telegram.tar.xz
-# wget -q --show-progress -O protonvpn.deb "https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-2_all.deb" && sudo dpkg -i protonvpn.deb && rm protonvpn.deb && sudo apt update && sudo apt install -y proton-vpn-gnome-desktop
-# cd ..
-
 # Set battery charging threshold
 sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
 sudo systemctl enable --now battery-threshold.service
