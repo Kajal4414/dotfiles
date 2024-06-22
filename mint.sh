@@ -25,14 +25,14 @@ cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 
 
 # Install Colloid-gtk-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
-sudo ./install.sh --dest /usr/share/themes/ --color dark --libadwaita --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme/
+sudo ./install.sh --dest /usr/share/themes/ --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme/
 
 # Install Colloid-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && sudo rm -rf /usr/share/icons/Colloid*
-sudo ./install.sh -d /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
-# /home/sakshi/.local/share/icons/Colloid/apps/scalable/protonvpn-gui.svg
-# /home/sakshi/.local/share/icons/Colloid/apps/scalable/pycharm.svg
-# /home/sakshi/.local/share/icons/Colloid/apps/scalable/idea.svg
+sudo ./install.sh --dest /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
+# 'sudo xed /usr/share/applications/protonvpn-app.desktop' And add 'Icon=/usr/share/icons/Colloid/apps/scalable/protonvpn-gui.svg'
+# 'sudo xed /usr/share/applications/jetbrains-pycharm-ce.desktop' And add 'Icon=/usr/share/icons/Colloid/apps/scalable/pycharm.svg'
+# 'sudo xed /usr/share/applications/jetbrains-idea-ce.desktop' And add 'Icon=/usr/share/icons/Colloid/apps/scalable/idea.svg'
 
 # Install Orchis-theme
 git clone --depth 1 https://github.com/vinceliuice/Orchis-theme && cd Orchis-theme/ && ./install.sh -u && sudo rm -rf /usr/share/themes/Orchis*
@@ -46,7 +46,8 @@ sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-ci
 # 'sudo xed /usr/share/applications/jetbrains-idea-ce.desktop' And add 'Icon=/usr/share/icons/Tela-Circle/scalable/apps/idea.svg'
 
 # Install JetBrainsMono font
-wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip # ~/.local/share/fonts
+curl -O https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip && unzip -q JetBrainsMono-2.304.zip -d JetBrainsMono && cd JetBrainsMono/fonts/variable/
+sudo mv *.ttf /usr/share/fonts/ && cd ../../.. && rm -rf JetBrainsMono*
 
 # Set Capitaine-cursors-theme
 wget https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
