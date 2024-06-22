@@ -10,17 +10,18 @@ git config --global user.name "Sakshi Aggarwal"
 git config --global user.email "81718060+sakshiagrwal@users.noreply.github.com"
 git config --global core.editor "xed --wait"
 
+# Clone dotfiles repository
+git clone --depth 1 https://github.com/sakshiagrwal/Dotfiles.git && cd Dotfiles
+
 # Set battery charging threshold to 60%
 sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
 sudo systemctl enable --now battery-threshold.service
 
-# Configure Firefox (https://github.com/datguypiko/Firefox-Mod-Blur)
+# Configure Firefox
 sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
-sudo curl -LSs -o /usr/lib/firefox/firefox.cfg https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg
-sudo curl -LSs -o /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js
-sudo curl -LSs -o /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
+sudo mv firefox.cfg /usr/lib/firefox/ autoconfig.js /usr/lib/firefox/defaults/pref/ policies.json /usr/lib/firefox/distribution/
 
-# Set Firefox-Mod-Blur theme
+# Set Firefox-Mod-Blur theme (https://github.com/datguypiko/Firefox-Mod-Blur)
 (cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*)
 
 # Install Colloid-gtk-theme
@@ -50,8 +51,8 @@ curl -O https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip && unzi
 sudo mv *.ttf /usr/share/fonts/ && cd ../../.. && rm -rf JetBrainsMono*
 
 # Install IBMPlexSans Regular/Medium font (https://fonts.google.com/specimen/IBM+Plex+Sans)
-sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Regular.ttf
-sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Medium.ttf
+sudo mv /usr/share/fonts/IBMPlexSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Regular.ttf
+sudo mv /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Medium.ttf
 # Unpack fonts to ~/.local/share/fonts (or /usr/share/fonts, to install fonts system-wide) and fc-cache -f -v
 
 # Set Capitaine-cursors-theme (https://github.com/sainnhe/capitaine-cursors)
