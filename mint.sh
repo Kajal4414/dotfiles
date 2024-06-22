@@ -55,6 +55,6 @@ sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/goo
 # Unpack fonts to ~/.local/share/fonts (or /usr/share/fonts, to install fonts system-wide) and fc-cache -f -v
 
 # Set Capitaine-cursors-theme
-curl -OLS https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
-unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' /usr/share/icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
+curl -OLS https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/
+sudo mv 'Capitaine Cursors' /usr/share/icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
 # Unpack cursors to ~/.icons (or /usr/share/icons, to install cursors system-wide)
