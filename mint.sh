@@ -4,14 +4,14 @@
 sudo apt update && sudo apt upgrade -y
 sudo mkdir -p /var/lib/samba/usershares/ # https://askubuntu.com/questions/798928/nautilus-share-message-called-net-usershare-info-but-it-failed
 
-# Install required packages
+# Git setup
 sudo apt install -y git-all
 git config --global user.name "Sakshi Aggarwal"
 git config --global user.email "81718060+sakshiagrwal@users.noreply.github.com"
 git config --global core.editor "xed --wait"
 
-# Set battery charging threshold
-sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/etc/systemd/system/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
+# Set battery charging threshold to 60%
+sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
 sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
@@ -23,22 +23,13 @@ sudo wget -q -O /usr/lib/firefox/distribution/policies.json https://raw.githubus
 # Set Firefox-Mod-Blur theme
 cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*
 
-# Download wallpaper
-wget -q --show-progress -O Downloads/wallpaper.png https://raw.githubusercontent.com/JaKooLit/Wallpaper-Bank/main/wallpapers/anime-girl-abyss.png
-
 # Install Colloid-gtk-theme
-git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && ./install.sh -u && rm -rf ~/.themes/Colloid*
-./install.sh --color dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme/
-# sudo ln -s ~/.themes/Colloid-Dark/ /usr/share/themes/Colloid-Dark
-# sudo unlink /usr/share/themes/Colloid-Dark
+git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
+sudo ./install.sh --dest /usr/share/themes/ --color dark --libadwaita --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme/
 
 # Install Colloid-icon-theme
-git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && rm -rf ~/.local/share/icons/Colloid*
-./install.sh && cd .. && rm -rf Colloid-icon-theme/
-# sudo ln -s ~/.local/share/icons/Colloid/ /usr/share/icons/Colloid
-# sudo unlink /usr/share/icons/Colloid
-
-# sudo nemo /usr/share/applications/
+git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && sudo rm -rf /usr/share/icons/Colloid*
+sudo ./install.sh -d /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
 # /home/sakshi/.local/share/icons/Colloid/apps/scalable/protonvpn-gui.svg
 # /home/sakshi/.local/share/icons/Colloid/apps/scalable/pycharm.svg
 # /home/sakshi/.local/share/icons/Colloid/apps/scalable/idea.svg
@@ -54,17 +45,9 @@ sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-ci
 # 'sudo xed /usr/share/applications/jetbrains-pycharm-ce.desktop' And add 'Icon=/usr/share/icons/Tela-Circle/scalable/apps/pycharm.svg'
 # 'sudo xed /usr/share/applications/jetbrains-idea-ce.desktop' And add 'Icon=/usr/share/icons/Tela-Circle/scalable/apps/idea.svg'
 
-# Install WhiteSur-icon-theme
-git clone --depth 1 https://github.com/vinceliuice/WhiteSur-icon-theme && cd WhiteSur-icon-theme/ && rm -rf ~/.local/share/icons/WhiteSur*
-./install.sh && cd .. && rm -rf WhiteSur-icon-theme/
+# Install JetBrainsMono font
+wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip # ~/.local/share/fonts
 
 # Set Capitaine-cursors-theme
-wget -q --show-progress https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
+wget https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
 unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
-# gsettings set org.cinnamon.desktop.interface cursor-theme 'Capitaine-Cursors' # Mouse Pointer
-
-# Set fonts
-# gsettings set org.cinnamon.desktop.interface font-name 'IBM Plex Sans Regular 10'
-# gsettings set org.cinnamon.desktop.interface titlebar-font-name 'IBM Plex Sans Medium 10'
-# gsettings set org.cinnamon.desktop.interface document-font-name 'IBM Plex Sans Regular 10'
-# gsettings set org.cinnamon.desktop.interface monospace-font-name 'JetBrains Mono Regular 10'
