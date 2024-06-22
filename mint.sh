@@ -14,7 +14,7 @@ git config --global core.editor "xed --wait"
 sudo curl -LSs https://raw.githubusercontent.com/sakshiagrwal/Dotfiles/main/battery-threshold.service -o /etc/systemd/system/battery-threshold.service
 sudo systemctl enable --now battery-threshold.service
 
-# Configure Firefox
+# Configure Firefox (https://github.com/datguypiko/Firefox-Mod-Blur)
 sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
 sudo wget -q -O /usr/lib/firefox/firefox.cfg https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/firefox.cfg
 sudo wget -q -O /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/defaults/pref/autoconfig.js
@@ -30,7 +30,7 @@ sudo ./install.sh --dest /usr/share/themes/ --color dark --tweaks black rimless 
 # Install Colloid-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && sudo rm -rf /usr/share/icons/Colloid*
 sudo ./install.sh --dest /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
-# 'sudo xed /usr/share/applications/protonvpn-app.desktop' And add 'Icon=/usr/share/icons/Colloid/apps/scalable/protonvpn-gui.svg'
+sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/protonvpn-gui.svg/' /usr/share/applications/protonvpn-app.desktop
 # 'sudo xed /usr/share/applications/jetbrains-pycharm-ce.desktop' And add 'Icon=/usr/share/icons/Colloid/apps/scalable/pycharm.svg'
 # 'sudo xed /usr/share/applications/jetbrains-idea-ce.desktop' And add 'Icon=/usr/share/icons/Colloid/apps/scalable/idea.svg'
 
@@ -54,7 +54,7 @@ sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Regular.ttf https://github.com/go
 sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Medium.ttf
 # Unpack fonts to ~/.local/share/fonts (or /usr/share/fonts, to install fonts system-wide) and fc-cache -f -v
 
-# Set Capitaine-cursors-theme
+# Set Capitaine-cursors-theme (https://github.com/sainnhe/capitaine-cursors)
 curl -OLS https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/
 sudo mv 'Capitaine Cursors' /usr/share/icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
 # Unpack cursors to ~/.icons (or /usr/share/icons, to install cursors system-wide)
