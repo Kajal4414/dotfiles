@@ -51,9 +51,9 @@ sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-ci
 
 # Install IBMPlexSans font (https://fonts.google.com/specimen/IBM+Plex+Sans)
 (cd IBMPlexSans/ && sudo mv *.ttf /usr/share/fonts/)
+
+# Rebuild font cache
 fc-cache -f -v
 
 # Set Capitaine-cursors-theme (https://github.com/sainnhe/capitaine-cursors)
-curl -OLS https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip && unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/
-sudo mv 'Capitaine Cursors' /usr/share/icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
-# Unpack cursors to ~/.icons (or /usr/share/icons, to install cursors system-wide)
+mv CapitaineCursors/Capitaine-Cursors/ /usr/share/icons/
