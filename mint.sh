@@ -49,6 +49,10 @@ sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-ci
 curl -O https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip && unzip -q JetBrainsMono-2.304.zip -d JetBrainsMono && cd JetBrainsMono/fonts/variable/
 sudo mv *.ttf /usr/share/fonts/ && cd ../../.. && rm -rf JetBrainsMono*
 
+# Install IBMPlexSans Regular/Medium font
+sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Regular.ttf
+sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Medium.ttf
+
 # Set Capitaine-cursors-theme
 wget https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
 unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
