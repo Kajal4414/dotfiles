@@ -2,7 +2,7 @@
 
 # System update
 sudo apt update && sudo apt upgrade -y
-sudo mkdir -p /var/lib/samba/usershares/ # https://askubuntu.com/questions/798928/nautilus-share-message-called-net-usershare-info-but-it-failed
+# sudo mkdir -p /var/lib/samba/usershares/ (https://askubuntu.com/questions/798928/nautilus-share-message-called-net-usershare-info-but-it-failed)
 
 # Git setup
 sudo apt install -y git-all
@@ -21,7 +21,7 @@ sudo curl -LSs -o /usr/lib/firefox/defaults/pref/autoconfig.js https://raw.githu
 sudo curl -LSs -o /usr/lib/firefox/distribution/policies.json https://raw.githubusercontent.com/sakshiagrwal/Scripts/dev/Linux/usr/lib/firefox/distribution/policies.json
 
 # Set Firefox-Mod-Blur theme
-cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*
+(cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*)
 
 # Install Colloid-gtk-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
