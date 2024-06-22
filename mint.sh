@@ -45,14 +45,16 @@ sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-ci
 # 'sudo xed /usr/share/applications/jetbrains-pycharm-ce.desktop' And add 'Icon=/usr/share/icons/Tela-Circle/scalable/apps/pycharm.svg'
 # 'sudo xed /usr/share/applications/jetbrains-idea-ce.desktop' And add 'Icon=/usr/share/icons/Tela-Circle/scalable/apps/idea.svg'
 
-# Install JetBrainsMono font
+# Install JetBrainsMono font (https://www.jetbrains.com/lp/mono/)
 curl -O https://download-cdn.jetbrains.com/fonts/JetBrainsMono-2.304.zip && unzip -q JetBrainsMono-2.304.zip -d JetBrainsMono && cd JetBrainsMono/fonts/variable/
 sudo mv *.ttf /usr/share/fonts/ && cd ../../.. && rm -rf JetBrainsMono*
 
-# Install IBMPlexSans Regular/Medium font
+# Install IBMPlexSans Regular/Medium font (https://fonts.google.com/specimen/IBM+Plex+Sans)
 sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Regular.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Regular.ttf
 sudo curl -LSs -o /usr/share/fonts/IBMPlexSans-Medium.ttf https://github.com/google/fonts/raw/main/ofl/ibmplexsans/IBMPlexSans-Medium.ttf
+# Unpack fonts to ~/.local/share/fonts (or /usr/share/fonts, to install fonts system-wide) and fc-cache -f -v
 
 # Set Capitaine-cursors-theme
-wget https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
-unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' ~/.icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
+curl -OLS https://github.com/sainnhe/capitaine-cursors/releases/download/r5/Linux.zip
+unzip -q Linux.zip -d Capitaine-Cursors && cd Capitaine-Cursors/ && mv 'Capitaine Cursors' /usr/share/icons/Capitaine-Cursors && cd .. && rm -rf Capitaine-Cursors Linux.zip
+# Unpack cursors to ~/.icons (or /usr/share/icons, to install cursors system-wide)
