@@ -1,7 +1,7 @@
 # Linux Mint Dotfiles
 
 ```sh
-git clone --depth 1 https://github.com/sakshiagrwal/dotfiles.git && cd dotfiles && chmod +x setup.sh && ./setup.sh
+git clone --depth 1 https://github.com/sakshiagrwal/dotfiles.git && cd dotfiles && ./setup.sh
 ```
 
 ## 1. System update

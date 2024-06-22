@@ -17,6 +17,9 @@ sudo systemctl enable --now battery-threshold.service
 sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
 sudo mv firefox.cfg /usr/lib/firefox/ && sudo mv autoconfig.js /usr/lib/firefox/defaults/pref/ && sudo mv policies.json /usr/lib/firefox/distribution/
 
+# Enable extended globbing
+shopt -s extglob
+
 # Set Firefox-Mod-Blur theme
 (cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*)
 
