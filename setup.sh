@@ -17,11 +17,8 @@ sudo systemctl enable --now battery-threshold.service
 sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
 sudo cp firefox.cfg /usr/lib/firefox/ && sudo cp autoconfig.js /usr/lib/firefox/defaults/pref/ && sudo cp policies.json /usr/lib/firefox/distribution/
 
-# Enable extended globbing
-shopt -s extglob
-
 # Set Firefox-Mod-Blur theme
-(cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && rm -rf !(ASSETS|*.css) .[^.]*)
+(cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && shopt -s dotglob && rm -rf !(ASSETS|*.css))
 
 # Install Colloid-gtk-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
