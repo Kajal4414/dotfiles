@@ -10,12 +10,12 @@ git config --global user.email "81718060+sakshiagrwal@users.noreply.github.com"
 git config --global core.editor "xed --wait"
 
 # Set battery charging threshold to 60%
-sudo mv battery-threshold.service /etc/systemd/system/
+sudo cp battery-threshold.service /etc/systemd/system/
 sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
 sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
-sudo mv firefox.cfg /usr/lib/firefox/ && sudo mv autoconfig.js /usr/lib/firefox/defaults/pref/ && sudo mv policies.json /usr/lib/firefox/distribution/
+sudo cp firefox.cfg /usr/lib/firefox/ && sudo cp autoconfig.js /usr/lib/firefox/defaults/pref/ && sudo cp policies.json /usr/lib/firefox/distribution/
 
 # Enable extended globbing
 shopt -s extglob
@@ -40,10 +40,10 @@ git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme && cd 
 sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-circle-icon-theme/
 
 # Install font
-sudo mv JetBrainsMono/variable/*.ttf IBMPlexSans/*.ttf /usr/share/fonts/
+sudo cp JetBrainsMono/variable/*.ttf IBMPlexSans/*.ttf /usr/share/fonts/
 
 # Rebuild font cache
 fc-cache -f -v
 
 # Install Capitaine-cursors-theme
-sudo mv CapitaineCursors/Capitaine-Cursors/ /usr/share/icons/
+sudo cp -pr CapitaineCursors/Capitaine-Cursors/ /usr/share/icons/
