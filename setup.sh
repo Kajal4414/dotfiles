@@ -4,7 +4,7 @@
 sudo apt update && sudo apt upgrade -y
 
 # Git setup
-sudo apt install -y git-all
+sudo apt install -y git adb
 git config --global user.name "Kajal4414"
 git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
 git config --global core.editor "xed --wait"
