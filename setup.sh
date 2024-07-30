@@ -15,21 +15,30 @@ tgm=$(curl -s "https://api.github.com/repos/telegramdesktop/tdesktop/releases/la
 
 sudo apt update && sudo apt install -y adb bleachbit git nodejs proton-vpn-gnome-desktop vlc
 
-# Git setup
+# Git Setup
 git config --global user.name "Kajal4414"
 git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
 git config --global core.editor "xed --wait"
 
-# Set battery charging threshold to 60%
-sudo cp battery-threshold.service /etc/systemd/system/
-sudo systemctl enable --now battery-threshold.service
+# Install VS Code Extensions
+extensions=("beardedbear.beardedtheme" "dbaeumer.vscode-eslint" "eamodio.gitlens" "esbenp.prettier-vscode" "foxundermoon.shell-format" "github.codespaces" "github.github-vscode-theme" "jock.svg" "ms-python.black-formatter" "ms-python.debugpy" "ms-python.pylint" "ms-python.python" "ms-python.vscode-pylance" "ms-vscode.makefile-tools" "ms-vscode.powershell" "pkief.material-icon-theme" "redhat.java" "redhat.vscode-xml" "redhat.vscode-yaml" "ritwickdey.liveserver" "tabnine.tabnine-vscode" "visualstudioexptteam.intellicode-api-usage-examples" "visualstudioexptteam.vscodeintellicode" "vscjava.vscode-java-debug" "vscjava.vscode-java-dependency" "vscjava.vscode-java-pack")
+
+for ext in "${extensions[@]}"; do
+    code --install-extension $ext
+done
+
+# Adjust Screen Contrast
+xgamma -gamma 0.85
+
+# Set Battery Charging Threshold to 60%
+sudo cp ./battery-threshold.service /etc/systemd/system/ && sudo systemctl enable --now battery-threshold.service
 
 # Configure Firefox
-sudo rm -rf /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
-sudo cp firefox.cfg /usr/lib/firefox/ && sudo cp autoconfig.js /usr/lib/firefox/defaults/pref/ && sudo cp policies.json /usr/lib/firefox/distribution/
+sudo rm /usr/lib/firefox/firefox.cfg /usr/lib/firefox/defaults/pref/autoconfig.js /usr/lib/firefox/distribution/policies.json
+sudo cp ./firefox.cfg /usr/lib/firefox && sudo cp ./autoconfig.js /usr/lib/firefox/defaults/pref && sudo cp ./policies.json /usr/lib/firefox/distribution
 
-# Set Firefox-Mod-Blur theme
-(cd ~/.mozilla/firefox/*.default-release/ && rm -rf chrome/ && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd chrome/ && shopt -s dotglob && rm -rf !(ASSETS|*.css))
+# Install Firefox-Mod-Blur theme
+(cd ~/.mozilla/firefox/*.default-release && rm -r ./chrome && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd ./chrome && rm -rf ./.git ./EXTRA* ./README* ./Linux*)
 
 # Install Colloid-gtk-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
