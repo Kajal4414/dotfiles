@@ -62,11 +62,11 @@ sudo ./install.sh -d /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
 # sudo sed -i "s|Icon=.*|Icon=$HOME/.local/share/icons/Tela-Circle/scalable/apps/pycharm.svg|" /usr/share/applications/jetbrains-pycharm-ce.desktop
 # sudo sed -i "s|Icon=.*|Icon=$HOME/.local/share/icons/Tela-Circle/scalable/apps/idea.svg|" /usr/share/applications/jetbrains-idea-ce.desktop
 
-# Install font
-sudo cp JetBrainsMono/variable/*.ttf IBMPlexSans/*.ttf /usr/share/fonts/
+# Install Fonts
+mkdir -p ~/.local/share/fonts && cp ./JetBrainsMono/variable/*.ttf ./IBMPlexSans/*.ttf ~/.local/share/fonts
 
-# Rebuild font cache
-fc-cache -f -v
+# Rebuild Font Cache
+# fc-cache -f -v
 
-# Install Capitaine-cursors-theme
-sudo cp -pr CapitaineCursors/Capitaine-Cursors/ /usr/share/icons/
+# Install Capitaine-Cursors
+cp -pr ./CapitaineCursors/Capitaine-Cursors ~/.icons
