@@ -51,16 +51,16 @@ sudo ./install.sh -d /usr/share/themes/ -c dark -s standard --tweaks black macos
 # Install Colloid-icon-theme
 git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && sudo rm -rf /usr/share/icons/Colloid*
 sudo ./install.sh -d /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
-# sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/protonvpn-gui.svg/' /usr/share/applications/protonvpn-app.desktop
-# sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/pycharm.svg/' /usr/share/applications/jetbrains-pycharm-ce.desktop
-# sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Colloid\/apps\/scalable\/idea.svg/' /usr/share/applications/jetbrains-idea-ce.desktop
+[ -f /usr/share/applications/protonvpn-app.desktop ] && sudo sed -i "s|Icon=.*|Icon=~/usr/share/icons/Colloid/apps/scalable/protonvpn-gui.svg|" /usr/share/applications/protonvpn-app.desktop
+[ -f /usr/share/applications/jetbrains-pycharm-ce.desktop ] && sudo sed -i "s|Icon=.*|Icon=/usr/share/icons/Colloid/apps/scalable/pycharm.svg|" /usr/share/applications/jetbrains-pycharm-ce.desktop
+[ -f /usr/share/applications/jetbrains-idea-ce.desktop ] && sudo sed -i "s|Icon=.*|Icon=~/usr/share/icons/Colloid/apps/scalable/idea.svg|" /usr/share/applications/jetbrains-idea-ce.desktop
 
-# Install Tela-circle-icon-theme
-git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme && cd Tela-circle-icon-theme/ && sudo rm -rf /usr/share/icons/Tela*
-sudo ./install.sh -d /usr/share/icons/ -n Tela-Circle && cd .. && rm -rf Tela-circle-icon-theme/
-# sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Tela-Circle\/scalable\/apps\/protonvpn.svg/' /usr/share/applications/protonvpn-app.desktop
-# sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Tela-Circle\/scalable\/apps\/pycharm.svg/' /usr/share/applications/jetbrains-pycharm-ce.desktop
-# sudo sed -i 's/Icon=.*/Icon=\/usr\/share\/icons\/Tela-Circle\/scalable\/apps\/idea.svg/' /usr/share/applications/jetbrains-idea-ce.desktop
+# Install Tela-circle-icon-theme (Default: ~/.local/share/icons)
+git clone --depth 1 https://github.com/vinceliuice/Tela-circle-icon-theme && cd ./Tela-circle-icon-theme
+./install.sh -n Tela-Circle && cd .. && rm -rf ./Tela-circle-icon-theme
+# sudo sed -i "s|Icon=.*|Icon=$HOME/.local/share/icons/Tela-Circle/scalable/apps/protonvpn.svg|" /usr/share/applications/protonvpn-app.desktop
+# sudo sed -i "s|Icon=.*|Icon=$HOME/.local/share/icons/Tela-Circle/scalable/apps/pycharm.svg|" /usr/share/applications/jetbrains-pycharm-ce.desktop
+# sudo sed -i "s|Icon=.*|Icon=$HOME/.local/share/icons/Tela-Circle/scalable/apps/idea.svg|" /usr/share/applications/jetbrains-idea-ce.desktop
 
 # Install font
 sudo cp JetBrainsMono/variable/*.ttf IBMPlexSans/*.ttf /usr/share/fonts/
