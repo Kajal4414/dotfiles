@@ -1,10 +1,21 @@
 #!/bin/bash
 
-# System update
+# System Update
 sudo apt update && sudo apt upgrade -y
 
+# Install Packages
+wget -q --show-progress https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i ./google*_amd64.deb && rm ./google*_amd64.deb
+wget -q --show-progress https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 && sudo dpkg -i ./code*_amd64.deb && rm ./code*_amd64.deb
+wget -q --show-progress https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3-3_all.deb && sudo dpkg -i ./protonvpn*_all.deb && rm ./protonvpn*_all.deb
+
+jdk=$(curl -s "https://www.oracle.com/java/technologies/downloads/" | grep -oP 'href="\K[^"]*linux-x64_bin\.deb' | head -n 1) && wget -q --show-progress $jdk && sudo dpkg -i ./jdk*_bin.deb && rm ./jdk*_bin.deb
+icc=$(curl -s "https://data.services.jetbrains.com/products/releases?code=IIC&latest=true" | grep -oP '"linux":\s*{\s*"link":\s*"\K[^"]+') && wget -q --show-progress $icc && sudo tar -xzf ./ideaIC-*.tar.gz -C /opt && rm ./ideaIC-*.tar.gz
+pcc=$(curl -s "https://data.services.jetbrains.com/products/releases?code=PCC&latest=true" | grep -oP '"linux":\s*{\s*"link":\s*"\K[^"]+') && wget -q --show-progress $pcc && sudo tar -xzf ./pycharm-*.tar.gz -C /opt && rm ./pycharm-*.tar.gz
+tgm=$(curl -s "https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest" | grep -oP '"browser_download_url": "\K[^"]*tsetup[^"]*\.tar\.xz') && wget -q --show-progress $tgm && sudo tar -xf ./tsetup*.tar.xz -C /opt && rm ./tsetup*.tar.xz
+
+sudo apt update && sudo apt install -y adb bleachbit git nodejs proton-vpn-gnome-desktop vlc
+
 # Git setup
-sudo apt install -y git adb
 git config --global user.name "Kajal4414"
 git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
 git config --global core.editor "xed --wait"
