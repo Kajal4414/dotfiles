@@ -16,9 +16,16 @@ tgm=$(curl -s "https://api.github.com/repos/telegramdesktop/tdesktop/releases/la
 sudo apt update && sudo apt install -y adb bleachbit git nodejs proton-vpn-gnome-desktop vlc
 
 # Git Setup
+# cp ./.gitconfig ~/
 git config --global user.name "Kajal4414"
 git config --global user.email "81718060+Kajal4414@users.noreply.github.com"
 git config --global core.editor "xed --wait"
+
+# SSH Setup
+# mkdir -p ~/.ssh && mv ./id_kajal ./id_kajal.pub ~/.ssh && chmod 600 ~/.ssh/id_kajal
+
+# Code Setup
+# cp ./settings.json ~/.config/Code/User
 
 # Install VS Code Extensions
 extensions=("beardedbear.beardedtheme" "dbaeumer.vscode-eslint" "eamodio.gitlens" "esbenp.prettier-vscode" "foxundermoon.shell-format" "github.codespaces" "github.github-vscode-theme" "jock.svg" "ms-python.black-formatter" "ms-python.debugpy" "ms-python.pylint" "ms-python.python" "ms-python.vscode-pylance" "ms-vscode.makefile-tools" "ms-vscode.powershell" "pkief.material-icon-theme" "redhat.java" "redhat.vscode-xml" "redhat.vscode-yaml" "ritwickdey.liveserver" "tabnine.tabnine-vscode" "visualstudioexptteam.intellicode-api-usage-examples" "visualstudioexptteam.vscodeintellicode" "vscjava.vscode-java-debug" "vscjava.vscode-java-dependency" "vscjava.vscode-java-pack")
@@ -41,16 +48,16 @@ sudo cp ./firefox.cfg /usr/lib/firefox && sudo cp ./autoconfig.js /usr/lib/firef
 (cd ~/.mozilla/firefox/*.default-release && rm -r ./chrome && git clone --depth 1 https://github.com/datguypiko/Firefox-Mod-Blur chrome && cd ./chrome && rm -rf ./.git ./EXTRA* ./README* ./Linux*)
 
 # Install Colloid-gtk-theme
-git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd Colloid-gtk-theme/ && sudo ./install.sh -u && sudo rm -rf /usr/share/themes/Colloid*
-sudo ./install.sh -d /usr/share/themes/ -c dark --tweaks black rimless && cd .. && rm -rf Colloid-gtk-theme/
+git clone --depth 1 https://github.com/vinceliuice/Colloid-gtk-theme && cd ./Colloid-gtk-theme && sudo ./install.sh -u && sudo rm -r /usr/share/themes/Colloid*
+sudo ./install.sh -d /usr/share/themes -c dark --tweaks black rimless && cd .. && rm -rf ./Colloid-gtk-theme
 
 # Install Orchis-theme
-git clone --depth 1 https://github.com/vinceliuice/Orchis-theme && cd Orchis-theme/ && ./install.sh -u && sudo rm -rf /usr/share/themes/Orchis*
-sudo ./install.sh -d /usr/share/themes/ -c dark -s standard --tweaks black macos && cd .. && rm -rf Orchis-theme/
+git clone --depth 1 https://github.com/vinceliuice/Orchis-theme && cd Orchis-theme/ && ./install.sh -u && sudo rm -r /usr/share/themes/Orchis*
+sudo ./install.sh -d /usr/share/themes -c dark -s standard --tweaks black macos && cd .. && rm -rf ./Orchis-theme
 
 # Install Colloid-icon-theme
-git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd Colloid-icon-theme/ && sudo rm -rf /usr/share/icons/Colloid*
-sudo ./install.sh -d /usr/share/icons && cd .. && rm -rf Colloid-icon-theme/
+git clone --depth 1 https://github.com/vinceliuice/Colloid-icon-theme && cd ./Colloid-icon-theme && sudo rm -r /usr/share/icons/Colloid*
+sudo ./install.sh -d /usr/share/icons && cd .. && rm -rf ./Colloid-icon-theme
 [ -f /usr/share/applications/protonvpn-app.desktop ] && sudo sed -i "s|Icon=.*|Icon=/usr/share/icons/Colloid/apps/scalable/protonvpn-gui.svg|" /usr/share/applications/protonvpn-app.desktop
 [ -f /usr/share/applications/jetbrains-pycharm-ce.desktop ] && sudo sed -i "s|Icon=.*|Icon=/usr/share/icons/Colloid/apps/scalable/pycharm.svg|" /usr/share/applications/jetbrains-pycharm-ce.desktop
 [ -f /usr/share/applications/jetbrains-idea-ce.desktop ] && sudo sed -i "s|Icon=.*|Icon=/usr/share/icons/Colloid/apps/scalable/idea.svg|" /usr/share/applications/jetbrains-idea-ce.desktop
